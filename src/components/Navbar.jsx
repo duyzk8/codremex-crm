@@ -1,8 +1,18 @@
+import { CotizarContext } from "@/contexts/CotizarContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import React, { useContext } from "react";
 
 export default function Navbar() {
   const router = useRouter();
+
+  const [cotizar, setCotizar] = useContext(CotizarContext);
+
+  const quantity = cotizar && cotizar.length > 0 ? cotizar.reduce((acc, current) => {
+    return acc + current.quantity;
+  }, 0) : 0;
+  
+
   return (
     <>
       <header className="text-gray-600 body-font">
@@ -22,10 +32,18 @@ export default function Navbar() {
               <span className="mr-5 hover:text-gray-900">Contacto</span>
             </Link>
           </nav>
+          <p
+            className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+            onClick={() => router.push("/cotizar")}
+          >
+            Productos :  <span> {quantity} </span>
+            
+          </p>
           <button
             className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
             onClick={() => router.push("/login")}
           >
+            
             Mi Cuenta
             <svg
               fill="none"

@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "name": "Duraslot",
+    "category": "Industrial",
+    "image": "./images/duraslot.png",
+    "description": "informacion duraslot.."
+  },
+  {
+    "id": 2,
+    "name": "Bend-a-drain",
+    "category": "Sanitario",
+    "image": "./images/bendadrain.png",
+    "description": "informacion bend a drain.."
+  },
+  {
+    "id": 3,
+    "name": "Landmax",
+    "category": "Industrial",
+    "image": "./images/landmax.png",
+    "description": "informacion Landmax.."
+  },
+  {
+    "id": 4,
+    "name": "Sanipro",
+    "category": "Sanitario",
+    "image": "./images/sanipro.png",
+    "description": "informacion Sanipro..."
+  }
+  
+]

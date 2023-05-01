@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Productos from "../components/productos/productos"
+import Productos from "../components/productos/ListaProductos"
 import Navbar from "../components/Navbar";
 
 export default function About() {

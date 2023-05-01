@@ -5,7 +5,6 @@ export default function GetUser() {
     const [user, setUser] =useState({
         email:"",
         username:""
-
     })
 
     //get profile, va a traer los datos del back end
