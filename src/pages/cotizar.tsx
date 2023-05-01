@@ -10,7 +10,7 @@ const cotizar = () => {
   return (
     <>
     <Navbar/>
-    <div>cotizar</div>
+    <div></div>
 
     <Cotizar/>
     </>
