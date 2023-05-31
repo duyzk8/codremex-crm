@@ -33,7 +33,7 @@ function Cotizar() {
       e.preventDefault()
 
       try {
-         axios.post("http://localhost:3000/api/cotizacion", (productos))
+         axios.post("/api/cotizacion", (productos))
          .then(response => {
             console.log(productos);
          })
