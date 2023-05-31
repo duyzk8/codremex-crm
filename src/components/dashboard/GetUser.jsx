@@ -3,8 +3,10 @@ import { useState } from "react"
 
 export default function GetUser() {
     const [user, setUser] =useState({
+        id: "",
         email:"",
-        username:""
+        username:"",
+        type: ""
     })
 
     //get profile, va a traer los datos del back end

@@ -18,8 +18,8 @@ export default function Home() {
         </Head>
       </div>
       
-        <Navbar />
-        <HomePage />
+      
+        <Layout />
       
     </>
   );

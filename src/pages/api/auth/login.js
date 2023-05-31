@@ -9,10 +9,13 @@ export default async function loginHandler(req, res){
     /// VALIDACION SI EL EMAIL Y PASSWORD COINCIDE EN BD
     const query = "SELECT * FROM users WHERE email= $1 AND password =$2";
     const response = await conn.query(query, [email,password]);
+    console.log(response.rows[0].id)
     console.log(response.rows[0].email);
     console.log(response.rows[0].password)
+    const userid = response.rows[0].id
     const emailbd = response.rows[0].email;
     const passwordbd = response.rows[0].password;
+    const usertype = response.rows[0].type;
 
     
 
@@ -21,8 +24,10 @@ export default async function loginHandler(req, res){
         //creamos el token con los datos y los datos que contendra
        const token = jwt.sign({
             exp: Math.floor(Date.now() / 1000) + 60 *60*24*30,
+            id: userid,
             email: emailbd,
             username: passwordbd,
+            type: usertype,
         }, 'secreto') //process.env.SECRET
         const serialized = serialize('myToken', token, {
             httpOnly: true,

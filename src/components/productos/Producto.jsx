@@ -50,7 +50,7 @@ export const Producto = ({ id, name, category, image, description }) => {
     <div>
       {
         quantityPerItem > 0 && (
-          <div> {quantityPerItem} </div>
+          <div class="text-blue-600 justify-center w-full"> Cantidad: {quantityPerItem} </div>
         )
       }
 

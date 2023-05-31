@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Productos from "../components/productos/ListaProductos"
 import Navbar from "../components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function About() {
   return (
@@ -13,7 +14,9 @@ export default function About() {
       </Head>
       <main>
         <Navbar />
+        <h1 className="p-5 text-2xl mb-6 text-center">PRODUCTOS</h1>
         <Productos/>
+        <Footer/>
       </main>
     </>
   );

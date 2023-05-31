@@ -1,0 +1,18 @@
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+email VARCHAR(100),
+password VARCHAR(100),
+type VARCHAR(50)
+);
+
+CREATE TABLE cotizaciones (
+id SERIAL PRIMARY KEY,
+id_user INT,
+productos TEXT[],
+status VARCHAR(100) DEFAULT  'pendiente',
+fecha TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+
+FOREIGN KEY (id_user) REFERENCES users (id)
+);
+
+

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function About() {
   return (
@@ -12,11 +13,11 @@ export default function About() {
       </Head>
       <main>
         <Navbar />
-        <section className="text-gray-600 body-font relative">
-          <div className="container px-5 py-24 mx-auto">
+        <section className="text-gray-900 body-font relative">
+          <div className="">
             <div className="flex flex-col text-center w-full mb-12">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-                Contáctanos
+              <h1 className="p-5 text-2xl mb-6 text-center">
+                CONTÁCTANOS
               </h1>
             </div>
             <div className="lg:w-1/2 md:w-2/3 mx-auto">
@@ -65,13 +66,13 @@ export default function About() {
                             </button>
                 </div>
                 <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                  <a className="text-indigo-500">codremex@gmail.com</a>
-                  <p className="leading-normal my-5">Ciudad Obregón, Sonora</p>
+                  
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <Footer/>
       </main>
     </>
   );

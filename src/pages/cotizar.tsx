@@ -10,9 +10,10 @@ const cotizar = () => {
   return (
     <>
     <Navbar/>
-    <div></div>
+    <div className="p-10">
 
     <Cotizar/>
+    </div>
     </>
   )
 }

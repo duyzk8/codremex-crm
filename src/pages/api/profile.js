@@ -11,7 +11,7 @@ export default function profilehandler(req, res){
     try {
         const user = verify(myToken, 'secreto')  //process.env.SECRET remplazar XD
         console.log(user)
-        return res.json({email: user.email, username: user.username});
+        return res.json({id: user.id, email: user.email, username: user.username, type: user.type});
     } catch (error) {
         return res.status(401).json({error: 'invalid token'})
     }
