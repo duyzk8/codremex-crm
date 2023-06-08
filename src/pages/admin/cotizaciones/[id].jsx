@@ -11,15 +11,19 @@ const CotizacionTable = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(`http://localhost:3000/api/cotizacion/${orden}`);
+        if (!response.ok) {
+          throw new Error('Error fetching cotizaciones');
+        }
         const data = await response.json();
         setCotizaciones(data);
       } catch (error) {
         console.log('Error fetching cotizaciones:', error);
+        
       }
     };
 
     fetchData();
-  }, [id]);
+  }, [orden]);
 
 
   return (
