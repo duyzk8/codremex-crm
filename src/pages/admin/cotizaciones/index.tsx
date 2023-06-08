@@ -5,13 +5,10 @@ import Navbar from 'src/components/admin/Navbar';
 
 const Cotizaciones = () => {
 
-
-
   return (
     <>
     <Navbar/>
     <div></div>
-
     <Cotizar/>
     
     </>
@@ -19,3 +16,4 @@ const Cotizaciones = () => {
 }
 
 export default Cotizaciones
+

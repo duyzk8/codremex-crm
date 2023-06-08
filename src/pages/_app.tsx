@@ -1,4 +1,3 @@
-import Sidebar from '@/components/admin/Sidebar'
 import { CotizarContextProvider } from '@/contexts/CotizarContext'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
