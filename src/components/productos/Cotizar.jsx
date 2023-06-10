@@ -5,41 +5,43 @@ import React, { useContext, useEffect, useState } from 'react'
 function Cotizar() {
 
    const [cotizar, setCotizar] = useContext(CotizarContext);
-   const [user, setUser] =useState({
+   const [user, setUser] = useState({
       id: "",
-      email:""
+      email: ""
    })
 
+   // Obtenemos el ID del usuario llamando a la api api/profile
    useEffect(() => {
       const getProfile = async () => {
-          try {
-              const response = await axios.get('/api/profile')
-              setUser(response.data)
-          } catch (error) {
-              console.error("Error fetching user profile:", error)
-          }
+         try {
+            const response = await axios.get('/api/profile')
+            setUser(response.data)
+         } catch (error) {
+            console.error("Error fetching user profile:", error)
+         }
       }
 
       getProfile()
-  }, [])
+   }, [])
 
-   
+   //Creamos el objeto que se enviara a la api con el id del usuario y los productos
    var productos = {
-      "id_user" : user.id,
-      "productos" : cotizar
+      "id_user": user.id,
+      "productos": cotizar
    };
 
+   //Se hace la peticion post a la api /api/cotizacion con el objeto productos, para mandar a la bd
    const handleSubmit = async e => {
       e.preventDefault()
 
       try {
          axios.post("/api/cotizacion", (productos))
-         .then(response => {
-            console.log(productos);
-         })
-         .catch(error => {
-            console.error(error)
-         })
+            .then(response => {
+               console.log(productos);
+            })
+            .catch(error => {
+               console.error(error)
+            })
       } catch (error) {
          console.log(error);
       }
@@ -93,8 +95,8 @@ function Cotizar() {
                      <span class="mx-1">Cotizar</span>
                   </button>
                   <pre>
-                  
-            </pre>
+
+                  </pre>
                </div>
             </div>
          </div>

@@ -10,12 +10,11 @@ export default function Home() {
       <Head>
         <title>Admin</title>
       </Head>
-        <main>
+      <main>
         <Navbar />
         <Dashboard />
         <Logout />
-        </main>
+      </main>
     </>
   );
 }
- 

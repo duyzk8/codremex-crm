@@ -7,10 +7,10 @@ const Cotizaciones = () => {
 
   return (
     <>
-    <Navbar/>
-    <div></div>
-    <Cotizar/>
-    
+      <Navbar />
+      <div></div>
+      <Cotizar />
+
     </>
   )
 }

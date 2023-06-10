@@ -10,7 +10,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         case "GET":
             try {
 
-                const query = "SELECT * FROM cotizaciones"
+                const query = "SELECT * FROM cotizaciones_finalizadas"
                 const response = await conn.query(query)
                 console.log(response);
 
@@ -22,7 +22,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         case "POST":
             try {
                 const { productos, id_user } = body;
-                const query = "INSERT INTO cotizaciones(id_user, productos) VALUES ($1, $2) RETURNING *";
+                const query = "INSERT INTO cotizaciones_finalizadas(id_user, productos) VALUES ($1, $2) RETURNING *";
                 const values = [id_user, productos];
                 const response = await conn.query(query, values)
                 console.log(response)
