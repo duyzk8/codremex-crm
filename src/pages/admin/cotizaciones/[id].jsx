@@ -42,7 +42,7 @@ const CotizacionTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/cotizacion/${orden}`);
+        const response = await fetch(`/api/cotizacion/${orden}`);
         if (!response.ok) {
           throw new Error('Error fetching cotizaciones');
         }
@@ -65,7 +65,7 @@ const CotizacionTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/userdata?id=${cotizaciones.id_user}`);
+        const response = await fetch(`/api/userdata?id=${cotizaciones.id_user}`);
         if (!response.ok) {
           throw new Error('Error fetching cotizaciones');
         }

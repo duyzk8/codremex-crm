@@ -7,7 +7,7 @@ const CotizacionTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/cotizacion');
+        const response = await fetch('/api/cotizacion');
         const data = await response.json();
         setCotizaciones(data);
         console.log(data)
