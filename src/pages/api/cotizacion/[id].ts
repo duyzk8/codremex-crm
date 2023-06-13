@@ -20,10 +20,10 @@ export default async(req:NextApiRequest, res:NextApiResponse)=>{
             }
         case "PUT":
             try {
-                const {status} = body;
-                const text = 'UPDATE cotizaciones SET status = $1 WHERE id = $2 RETURNING *'
-                const values =[status, query.id]
-                const result = await conn.query(text, values)
+                const {status, productosData, granTotal} = body;
+                const text = 'UPDATE cotizaciones SET status = $1, productos = $2, granTotal = $3 WHERE id = $4 RETURNING *';
+                const values =[status, productosData, granTotal, query.id];
+                const result = await conn.query(text, values);
     
                 if(result.rowCount === 0)
                 return res.status(404).json({message: "Cotizacion no encontrada"});
@@ -31,7 +31,7 @@ export default async(req:NextApiRequest, res:NextApiResponse)=>{
                 return res.json(result.rows[0])
             } catch (error:any) {
                 return res.status(500).json({message: error.message});
-            }
+            } 
         case "DELETE":
             try {
                 const text = 'DELETE FROM cotizaciones WHERE id = $1 RETURNING *'

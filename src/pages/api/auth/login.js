@@ -9,9 +9,9 @@ export default async function loginHandler(req, res){
     /// VALIDACION SI EL EMAIL Y PASSWORD COINCIDE EN BD
     const query = "SELECT * FROM users WHERE email= $1 AND password =$2";
     const response = await conn.query(query, [email,password]);
-    console.log(response.rows[0].id)
-    console.log(response.rows[0].email);
-    console.log(response.rows[0].password)
+    //console.log(response.rows[0].id)
+    //console.log(response.rows[0].email);
+    //console.log(response.rows[0].password)
     const userid = response.rows[0].id
     const emailbd = response.rows[0].email;
     const passwordbd = response.rows[0].password;

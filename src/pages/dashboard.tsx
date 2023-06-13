@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <main>
         <Navbar />
-        <h1>dashboard</h1>
+        <h1>DASHBOARD</h1>
         <GetUser />
         <Logout />
       </main>
